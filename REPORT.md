@@ -30,3 +30,14 @@ Q6) When you run nm on your client_static executable, are the symbols for functi
 
 Ans) Yes, when you run the nm tool on the client_static executable, you will see the symbols for functions like mystrlen directly inside the executable. This happens because static linking copies the actual code for these functions from the static library into your final binary at compile time. In other words, the program contains its own private copy of every library function it uses. This explains why statically linked executables are usually larger in size—they carry the full code from the library inside them. It also shows that once a program is statically linked, it no longer depends on the external .a library file to run, because everything it needs has already been embedded into the executable.
 
+
+Q7) What is Position-Independent Code (-fPIC) and why is it a fundamental requirement for creating shared libraries?
+
+Ans) Position-Independent Code (-fPIC) means the generated machine code does not assume a fixed memory address for its instructions or data. Instead, it can be loaded anywhere in memory without modification. This is essential for shared libraries because the dynamic loader may place them at different addresses in different processes. Without -fPIC, the library code would need relocation each time it is loaded, which would defeat the purpose of sharing one memory copy among multiple processes.
+
+Q8) Explain the difference in file size between your static and dynamic clients. Why does this difference exist?
+Ans) The statically linked client embeds all the library code directly into its executable, which makes it larger in size. The dynamically linked client only contains references to the external shared library and relies on the loader to bring in the actual function code at runtime. As a result, the dynamic client is much smaller because it does not duplicate the library code.
+
+Q9) What is the LD_LIBRARY_PATH environment variable? Why was it necessary to set it for your program to run, and what does this tell you about the responsibilities of the operating system's dynamic loader?
+
+Ans) LD_LIBRARY_PATH is an environment variable that specifies additional directories where the dynamic loader should search for shared libraries at runtime. By default, the loader only searches standard system library directories like /lib and /usr/lib. Since libmyutils.so was created in a custom lib/ folder, it was necessary to set LD_LIBRARY_PATH to include that directory. This shows that the dynamic loader is responsible for resolving all library dependencies before the program starts, and it requires either system-wide installation of the library or explicit instructions on where to find it.
