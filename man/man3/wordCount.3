@@ -1,0 +1,18 @@
+.TH WORDCOUNT 3 "September 2025" "libmyutils" "Library Functions"
+.SH NAME
+wordCount \- count lines, words, and characters in a file
+.SH SYNOPSIS
+.B int wordCount(FILE* file, int* lines, int* words, int* chars);
+.SH DESCRIPTION
+The
+.B wordCount()
+function reads from the file stream \fIfile\fR and counts the number of lines, words, and characters.
+The results are stored in the integer pointers \fIlines\fR, \fIwords\fR, and \fIchars\fR.
+The file pointer is rewound to the beginning after the operation.
+.SH RETURN VALUE
+Returns 0 on success, and \-1 on failure (e.g., invalid file pointer).
+.SH ERRORS
+Passing a NULL file pointer will cause the function to fail.
+.SH AUTHOR
+Written by Your Name ahsannaeem612@gmail.com
+

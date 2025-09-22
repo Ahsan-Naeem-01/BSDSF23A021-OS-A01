@@ -1,0 +1,17 @@
+.TH MYSTRNCPY 3 "September 2025" "libmyutils" "Library Functions"
+.SH NAME
+mystrncpy \- copy at most n characters of a string
+.SH SYNOPSIS
+.B int mystrncpy(char* dest, const char* src, int n);
+.SH DESCRIPTION
+The
+.B mystrncpy()
+function copies at most \fIn\fR characters from the string pointed to by \fIsrc\fR into the buffer pointed to by \fIdest\fR.
+If \fIsrc\fR is shorter than \fIn\fR characters, the remaining characters in \fIdest\fR are padded with null bytes.
+.SH RETURN VALUE
+Returns the number of characters written to \fIdest\fR.
+.SH ERRORS
+If \fIdest\fR is smaller than \fIn\fR, buffer overflow may occur. This function does not perform bounds checking.
+.SH AUTHOR
+Written by Your Name ahsannaeem612@gmail.com
+

@@ -1,0 +1,38 @@
+.TH CLIENT 1 "September 2025" "Version 0.4.1" "User Commands"
+.SH NAME
+client \- demonstration program for libmyutils
+.SH SYNOPSIS
+.B client
+.RI [ no\ options ]
+.SH DESCRIPTION
+The
+.B client
+program is a demonstration executable that showcases the use of the libmyutils library.
+.PP
+It demonstrates custom string manipulation functions:
+.IP \[bu]
+mystrlen \- calculate the length of a string
+.IP \[bu]
+mystrcpy \- copy one string into another
+.IP \[bu]
+mystrncpy \- copy the first \fIn\fR characters of a string
+.IP \[bu]
+mystrcat \- concatenate two strings
+.PP
+It also demonstrates file-based utilities:
+.IP \[bu]
+wordCount \- count lines, words, and characters in a text file
+.IP \[bu]
+mygrep \- search for lines containing a pattern in a file
+.SH USAGE
+To run the program, compile the project and execute:
+.PP
+.EX
+$ client
+.EE
+.PP
+The program expects a file named
+.I test.txt
+to be present in the current directory.
+.SH AUTHOR
+Written by Ahsan Naeem ahsannaeem612@gmail.com

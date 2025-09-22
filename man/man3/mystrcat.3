@@ -1,0 +1,17 @@
+.TH MYSTRCAT 3 "September 2025" "libmyutils" "Library Functions"
+.SH NAME
+mystrcat \- concatenate two strings
+.SH SYNOPSIS
+.B int mystrcat(char* dest, const char* src);
+.SH DESCRIPTION
+The
+.B mystrcat()
+function appends the string pointed to by \fIsrc\fR to the end of the string pointed to by \fIdest\fR.
+The destination buffer must be large enough to hold the resulting concatenated string including the terminating null byte.
+.SH RETURN VALUE
+Returns the total length of the resulting string (length of dest + length of src).
+.SH ERRORS
+If the destination buffer is not large enough, buffer overflow may occur. This function does not perform bounds checking.
+.SH AUTHOR
+Written by Your Name ahsannaeem612@gmail.com
+
